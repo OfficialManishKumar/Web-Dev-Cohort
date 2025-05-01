@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        #div1{display: flex;}
+        #div2{display: flex;}
+        #div3{height: 10vh; display: flex; align-items: center; justify-content: center;background-color: red;}
+        #div4{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #div5{
+            padding: 10px;
+            margin: 20px;
+            height: 20px;
+            background-color: red;
+        }
+        #div6{
+            display: flex;
+            gap: 50px;
+        }
+        #div7{
+            display: flex;
+            flex: 1;
+        }
+        #div9{
+            display: flex;
+            background-color: aqua;
+            flex-direction: column;
+            align-items: center;  /* Even we are changing "align-items" it is working in main axis because flex direction is changed. */
+        }
+    </style>
+</head>
+<body>
+    
+<!-- Flexbox is just flexible box -->
+<div id="div1">
+    <p>Hello</p>
+    <p>World!</p>
+</div>
+
+<!-- In Flexbox, Horizontal line is the main axis and vertical line is the cross axis. -->
+<!-- And by-default our Items are situated at Starting point of main axis. -->
+<div id="div2">
+    <p>Hello</p>
+    <p>World!</p>
+</div>
+
+<!-- When we make any elements parent's flexbox, then it's child display type automatically becomes flex but not inline but it looks like inline but not in actuallyy. -->
+<!-- We Use "Justify-Content" to align the items in main axis and "Align-Items" to align the items in cross axis. But they only works when we make the parent's display type "flex" -->
+<div id="div3">
+    <p>Hello</p>
+    <p>World!</p>
+</div>
+
+<!-- And If any element's parent display type is flex then when we decrease screen size, childs get shrinked and to prevent from this, we use "flex-wrap = wrap;" property. -->
+<div id="div4">
+    <div style="height: 5vh; background-color: green;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium eos alias corporis, amet, veritatis itaque praesentium earum facere repellendus non cumque magnam eveniet ratione distinctio pariatur! Quisquam ullam assumenda mollitia minus odio consequatur, doloremque doloribus qui architecto dignissimos velit? Dolorum, beatae possimus. Reiciendis, minima! Sequi laboriosam similique voluptatem non eligendi!</div>
+    <div style="height: 5vh; background-color: red;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium saepe commodi, vero deleniti non, eligendi quas beatae nesciunt nemo, vel magni. Maxime, aliquam? Explicabo illum quidem enim incidunt unde iure veritatis cum ab fuga? Natus fuga fugiat assumenda quisquam cumque explicabo recusandae id perferendis distinctio, vitae nisi accusantium earum quidem.</div>
+</div>
+
+<!-- Padding is the distance between Internal boundaries and Margin is the distance between External boundaries. -->
+<div id="div5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, ducimus.</div>
+
+<!-- Gap is an property of flex box and it helps to add gaps between the elements. -->
+<div id="div6">
+    <h1>Lorem, ipsum dolor.</h1>
+    <h1>Lorem, ipsum dolor.</h1>
+</div>
+
+<!-- We can use "flex" to give any ratio size to each child and we can also give more than ratio one to any child. -->
+<div id="div7">
+    <div style="height: 50px; background-color: aqua; flex: 3;"></div>
+    <div style="height: 50px; background-color: brown; flex: 1;"></div>
+</div>
+
+<!-- If we talk about priority then lesser priority have more strength and dominance than higher priority. Similarly in case "order" of flexbox childs, by default each child have a default order value of 0 and we can change it to arrange the childs position even without changing the order of childs in html code page. -->
+<div id="div8">
+    <div style="height: 50px; background-color: red; order: 2;">Hello</div>
+    <div style="height: 50px; background-color: green;">World</div>
+    <div style="height: 50px; background-color: blue;">Hello</div>
+    <div style="height: 50px; background-color: black;">World</div>
+</div>
+
+<!-- If we changed the direction of flexbox using "flex-direction" property then the as the angle of flexbox is changes from 0 to 90degree, the main axis and cross axis working axis also gets interchanged due to changed angle. -->
+<div id="div9">
+    <p>hello World!</p>
+</div>
+
+</body>
+</html>

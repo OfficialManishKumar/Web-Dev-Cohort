@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+
+    <style> /* This is called inline CSS */
+    button{
+        color: red;
+    }
+    button{     /* If we write same style again, then it will override the previous style. */
+        color: blue;
+    }
+    /* We can select all of the same tag elements using that tag name like button and p */
+    p{color: green;}
+
+    /* To select Class, we use "." and to select any id, we use "#" */
+    #id1{color: pink;}
+
+    /* Specficity algorithm */
+    h3{color: salmon;}
+    #heading3{
+        color: green;
+    }
+
+    .heading3{
+        color: blue;
+    }
+/* In the above case, inline css color had overrided the id, class and element selctor css color. */
+    h3{color: salmon;}
+    #heading4{
+        color: green;
+    }
+
+    .heading4{
+        color: blue;
+    }
+/* In the above case, Id color had overrided the class and element selector color. */
+/* So by analyzing both situations, we found that CSS overide concept follows specficity algorithm which means it will use the value of most specific selector. And if we provide different values for same css property using inline css, id selector, class selector and element selector, then it will use the value of most specific in this order: element selector > Inline CSS > id selector > Class selector > Element selector */
+    </style>
+</head>
+<body>
+
+<!-- If we add any element using HTML, then it comes with some default styles from browser border for buttons etc, And these styles are called User Agent Stylesheet, and it varies from browser to browser. -->
+<button>Click Me</button>
+<!-- So If the Styles are already defined by the browser in form of User agent(browser) stylesheet, then we are actually just overriding the styles of elements not defining them. And CSS full form is also stating this because "cascading" means overriding. -->
+
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, aliquid?</p>
+
+<!-- Inline CSS: If we add styling in same line of the element. Style can only be applied to that element. -->
+<button style="color: pink;">Click Me</button>
+
+<!-- Multiple Tags/Elements can belong to same class. And a single tag/element can belong to multiple classes. And we can modify all of them at a time. -->
+<button class="class1"></button>
+<button class="class1"></button>
+<button class="class1" class="class2"></button>
+
+<!-- Neither a Tag/element can belong to multiple ids nor multiple ids can belong to a single tag/element. -->
+<p id="id1">Lorem ipsum dolor sit amet.</p>
+
+<!-- If we provide multiple styling for an same element in different ways then specificty algorithm works. -->
+<h3 id="heading3" class="heading3" style="color: red;">Lorem, ipsum dolor.</h3>
+<h3 id="heading4" class="heading4">Lorem, ipsum dolor.</h3>
+
+<!-- In CSS we have two types of Element on the Basis of area they occupy:
+ - Block level Elements: Occups the complete row space like: paragraph, list etc.
+ - Inline Level Elements: Occupies only the required space like: span, button etc.
+
+And we can cascade(override) their by-default behavior using "display" property.
+ -->
+<button style="display: block;">Click Me</button>
+
+</body>
+</html>

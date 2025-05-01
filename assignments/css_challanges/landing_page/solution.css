@@ -1,0 +1,123 @@
+/* Challenge CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic styles */
+  body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    background-color: rgb(48, 47, 47);
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: rgb(48, 47, 47);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px 10px 30px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .logo img {
+    border-radius: 50%;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+  }
+  
+  .nav-links a:hover {
+    background-color: green;
+  }
+  
+  /* Hero section styles */
+  .hero {
+    position: relative;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80vh;
+    align-items: center;
+    padding: 10vh;
+    line-height: 8vh;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .hero_image{
+    height: 80vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    padding: 10px 30px;
+    background-color: rgb(255, 145, 0);
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .cta-button:hover {
+    color: white;
+    background-color: black;
+  }
+  
+  /* Features section styles */
+  .features {
+    position: absolute;
+    display: flex;
+    top: 35vh;
+    width: 96%;
+    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: space-evenly;
+    margin: 0 1.7vw;
+    padding: 5vh;
+    border-radius: 30px;
+    margin-top: 2vh;
+  }
+  
+  .feature {
+    text-align: center;
+    color: white;
+    border: 1.5px solid rgb(255, 102, 0);
+    border-radius: 10px;
+    padding: 15px;
+    width: 18vw;
+  }
+  
+  .feature h3 {
+    color: rgb(255, 145, 0);
+    font-size: 1.1rem;
+  }
+  
+  .feature p {
+    font-size: 13px;
+  }

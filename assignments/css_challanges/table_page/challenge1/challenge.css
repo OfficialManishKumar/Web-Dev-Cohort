@@ -1,0 +1,86 @@
+/* Challenge CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+  }
+  
+  h1 {
+    font-size: 3.5vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vmax;
+  }
+  
+  .pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vmax;
+    margin: 5vh 13vw 0 13vw;
+  }
+  
+  .pricing-card {
+    align-self: center;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0.5px 0.5px 1px 1px black;
+    text-align: center;
+    list-style:inside;
+    height: fit-content;
+    width: 22vmax;
+    padding: 10px;
+  }
+  
+  .pricing-card:hover {
+    background-color: green;
+  }
+  
+  .pricing-card.popular {
+    position: relative;
+    box-shadow: none;
+    border: 2.5px solid rgb(255, 145, 0);
+  }
+  
+  .popular-badge {
+    position: absolute;
+    background-color: rgb(255, 145, 0);
+    padding: 3px 10px;
+    border-radius: 20px;
+    left: 50%;
+    transform: translate(-50%, -90%);
+  }
+  
+  .pricing-card h2{
+    margin: 1vmax 0 0.5vmax 0;
+    font-weight: 600;
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  .period {
+    margin: 1vh 0 2vh 0;
+  }
+  
+  .subscribe-btn {
+    padding: 7px 15px;
+    background-color: rgb(255, 145, 0);
+    border-radius: 15px;
+    border: none;
+    margin: 2vmax 0 1.5vmax 0;
+  }
+  
+  .subscribe-btn:hover {
+    background-color: green;
+  }
+  

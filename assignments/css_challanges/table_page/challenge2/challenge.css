@@ -1,0 +1,134 @@
+/* Challenge CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    background-color: black;
+    padding: 50px;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  h1 {
+    color: red;
+    font-size: 2rem;
+  }
+  
+  .pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw;
+  }
+  
+  .pricing-card {
+    width: 250px;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .beginner{
+    background-color: rgba(128, 128, 128, 0.5);
+    border: 2px solid rgba(128, 128, 128, 0.7);
+  }
+
+  .warrior{
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 2px solid rgba(255, 0, 0, 0.3);
+  }
+  
+  .champion{
+    background-color: rgba(255, 255, 0, 0.1);
+    border: 2px solid rgba(255, 255, 0, 0.4);
+  }
+
+  .pricing-card:hover {
+    background-color: green;
+  }
+  
+  .card-header {
+  margin-top: 15px;
+  margin: 20px;
+  }
+  
+  .icon {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+  
+  .popular-tag {
+    position: absolute;
+    transform: translate(+14%, -50%);
+    padding: 3px 20px;
+    border-radius: 20px;
+    background-color: yellow;
+    color: black;
+  }
+  
+  .price-block {
+    background-color: rgba(128, 128, 128, 0.534);
+    border-radius: 20px;
+    padding: 10px;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+  }
+  
+  .price {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: rgb(255, 136, 136);
+  }
+  
+  .period {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .features {
+    margin-top: 30px;
+    line-height: 2.5rem;
+    list-style: none;
+    text-align: left;
+    padding-left: 25px;
+  }
+  
+  .features li {
+    color: rgb(255, 255, 255,);
+  }
+  
+  .features li.disabled {
+    color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .join-btn {
+    margin: 20px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 2px solid rgb(247, 54, 54);
+    color: red;
+    font-size: 0.9rem;
+  }
+  
+  .join-btn:hover {
+    background-color: green;
+  }
