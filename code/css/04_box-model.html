@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+    /* Situation of box sizing = content-box or by-default. */
+    #parent1{  /* Here we can see total area occupied by this container is more than the given height and width*/
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+        padding: 10px;
+        border: 5px solid blue;
+        background-color: green;
+    }
+    /* Situation of box sizing = border-box */
+    #parent2{  /* Here we can see total area occupied by this container is not more than the given height and width*/
+        box-sizing: border-box;
+        height: 50px;
+        width: 50px;
+        margin: 10px;
+        padding: 10px;
+        border: 5px solid blue;
+        background-color: green;
+    }
+
+    /* Margin coincidence */
+    #box1{
+        height: 50px;
+        width: 50px;
+        background-color: red;
+        margin: 30px;
+    }
+    #box2{
+        height: 50px;
+        width: 50px;
+        background-color: green;
+        margin: 20px;
+    }
+    /* now if wee see the code, then we might think that the total gap between box 1 and 2 will be 50, but it's actually 30 because when we done margin for bottom = 30 and then we done margin for 2nd box fro top = 20 then the css made their difference 30 and it automatically fulfilling the box 2 criteria because their margin is already more than or equal to 20. and same will happen even if box 1 and 2 position is changed.  */
+    /* Or in short, we can say that margin i overlapping and it can overlap */
+    </style>
+</head>
+<body>
+    
+<!-- When we create any container of any Height and width and then when we add padding or margin or border, then it will be calculated exclusively from our given height and width, which can create problem and takes extra place because in this case, box sizing is border box. -->
+<div id="parent1"></div>
+<!-- So to SOlve this, we use box sizing is equals to border box, which will take the padding and margin inclusive in the given height and width -->
+<div id="parent2"></div>
+
+<!-- Margin coincidence -->
+<div id="box1"></div>
+<div id="box2"></div>
+</body>
+</html>

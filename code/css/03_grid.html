@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        /* using "grid-template-rows" and "grid-template-columns" */
+        #parent1{
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+            grid-template-rows: 33% 33% 33%;
+            background-color: red;
+        }
+        /* using "repeat" */
+        #parent2{
+            display: grid;
+            grid-template-columns: repeat(3,33%);
+            grid-template-rows: repeat(3,33%);
+            background-color: green;
+        }
+        /* using "grid-row-gap" and "grid-column-gap" */
+        #parent3{
+            display: grid;
+            grid-template-columns: repeat(3,33%);
+            grid-template-rows: repeat(3,33%);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            border: 1px solid blue;
+        }
+        /* Modifying Items size */
+        #parent4{
+            display: grid;
+            grid-template-columns: repeat(3,50px);
+            grid-template-rows: repeat(3,50px);
+            border: 1px solid green;
+        }
+        #parent4 #child1{
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            border: 1px solid red;
+        }
+        /* using "span" keyword */
+        #parent5{
+            display: grid;
+            grid-template-columns: 30px 30px 30px 30px;
+            grid-template-rows: 30px 30px 30px 30px;
+        }
+        #parent5 #child1{
+            grid-column-start: 1;
+            grid-column-end: span 3;
+            grid-row-start: 2;
+            grid-row-end: -1;  /* We can use it to make the block cover all next blocks even if any next block comes. */
+        }
+        /* Minimizing the styling code length using "grid-row" instead of two parameters like "grid-row-start" and "grid-row-end" and also for "grid-column" */
+        #parent6{
+            display: grid;
+            grid-template-columns: 30px 30px 30px 30px;
+            grid-template-rows: 30px 30px 30px 30px;
+        }
+        #parent6 #child1{
+            grid-column: 1 / span 2 ;  /* Here we done the same thing, that we done in the above parent but in shorter way*/
+            grid-row: 2 / -1;
+        }
+        /* minimize more length, using "grid-area" that will take both grid row and column which takes parameter in this order: grid-row-start/grid-column-start/grid-row-end/grid-column-end */
+        #parent7{
+            display: grid;
+            grid-template-columns: 30px 30px 30px 30px;
+            grid-template-rows: 30px 30px 30px 30px;
+        }
+        #parent7 #child1{
+            grid-area: 1/2/span2/-1;
+        }
+    </style>
+</head>
+<body>
+    
+<!-- Grid is an two dimensional layout, in which we can control both the rows and columns instead of just rows or columns in Flexbox. -->
+<!-- we use "grid-template-rows" or "grid-template-columns" to define te strucutre of our grid -->
+<div id="parent1">
+    <div id="child1">Lorem ipsum dolor sit amet.</div>
+    <div id="child2">Architecto eos fugit quo consequuntur.</div>
+    <div id="child3">Esse praesentium sit dolores culpa.</div>
+</div>
+
+<!-- But If we wanna lots of boxes then we will face problem in writing that much long code for that n number of boxes. So to solve this, we use repeat in which in first parameter we write the number of time we want to repeat and in second parameter we write the size of (row or column) each box  -->
+<div id="parent2">
+    <div id="child1">Lorem ipsum dolor sit amet.</div>
+    <div id="child2">Beatae culpa voluptas excepturi molestias?</div>
+    <div id="child3">Odio nobis recusandae officia hic.</div>
+</div>
+
+<!-- To add a gap between the boxes, both in row and column level, we use "grid-row-gap"and "grid-column-gap" but not "grid-gap" because it can make clutter in grid row and column gap -->
+<div id="parent3">
+    <div id="child1">Lorem ipsum dolor sit amet.</div>
+    <div id="child2">Beatae culpa voluptas excepturi molestias?</div>
+    <div id="child3">Odio nobis recusandae officia hic.</div>
+</div>
+
+<!-- Modifying Items size -->
+<div id="parent4">
+    <div id="child1">Lorem ipsum dolor sit amet.</div>
+    <div id="child2">Beatae culpa voluptas excepturi molestias?</div>
+    <div id="child3">Odio nobis recusandae officia hic.</div>
+</div>
+
+<!--lets assume an situation where you wanna any item of any grid t start from anywhere but must cover next 4block, here we can use "span" keyword -->
+<div id="parent5">
+    <div id="child1" style="background-color: red;"></div>
+    <div id="child2" style="background-color: green;"></div>
+    <div id="child3" style="background-color: violet;"></div>
+    <div id="child4" style="background-color: yellow;"></div>
+    <div id="child5" style="background-color: blue;"></div>
+</div>
+
+<!-- Minimizing the styling code length using "grid-row" instead of two parameters like "grid-row-start" and "grid-row-end" and also for "grid-column" -->
+<div id="parent6">
+    <div id="child1" style="background-color: blue;"></div>
+    <div id="child2" style="background-color: violet;"></div>
+    <div id="child3" style="background-color: green;"></div>
+    <div id="child4" style="background-color: yellow;"></div>
+    <div id="child5" style="background-color: red;"></div>
+</div>
+
+<!-- If we wanna to further minimize the length, then we can use "grid-area" that will take both grid row and column -->
+<div id="parent7">
+    <div id="child1" style="background-color: red;"></div>
+    <div id="child2" style="background-color: green;"></div>
+    <div id="child3" style="background-color: violet;"></div>
+    <div id="child4" style="background-color: yellow;"></div>
+    <div id="child5" style="background-color: blue;"></div>
+</div>
+
+</body>
+</html>
