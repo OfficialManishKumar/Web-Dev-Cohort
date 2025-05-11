@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backgroung changer button</title>
+</head>
+<body>
+    
+<!-- To change color, we need to define the working as Functions and giving custom color value. Older and outdated way. -->
+<button onclick="changeBgColor('red')">Change the Color to red</button>
+
+<!-- Modern way -->
+<button id="button2">Change the Color to green</button>
+
+</body>
+<script>
+
+    function changeBgColor (color){
+        document.body.style.backgroundColor = color;
+    }
+
+    let button2 = document.querySelector('#button2')
+    button2.addEventListener('click',function(){document.querySelector('body').style="background-color: green;"})
+
+</script>
+</html>

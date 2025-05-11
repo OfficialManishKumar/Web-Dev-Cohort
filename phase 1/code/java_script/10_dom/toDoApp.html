@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO Do App</title>
+    <style>
+        #createToDo{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+<h2>To Do App</h2>
+
+<main>
+    <div id="container">
+        <div id="createToDo">
+            <input type="text" placeholder="Enter your TO DO">
+            <button>Add</button>
+        </div>
+        <div>
+            <ul id="toDos">
+
+            </ul>
+        </div>
+    </div>
+</main>
+
+</body>
+<script>
+
+    let input = document.querySelector('#createToDo>input')
+    let addButton = document.querySelector('#createToDo>button')
+    let toDos = document.querySelector('#toDos')
+    
+    addButton.addEventListener('click',function (){
+        if (input.value == ""){
+            alert("Please Enter a To DO first")
+        }
+        else {
+            // li Part
+            let Li = document.createElement('li');
+            Li.innerText = input.value;
+            toDos.appendChild(Li);
+            input.value = ""
+
+            // button Part
+            let delButton = document.createElement('button');
+            delButton.innerText = "done";
+            Li.appendChild(delButton);
+            delButton.addEventListener('click',function(){Li.remove()})
+        }
+    }
+)
+
+</script>
+</html>
