@@ -46,16 +46,11 @@ nextButton.addEventListener('click',function(){
   imageDisplay.innerHTML = `<img src=${images[i].url}></img>`
 })
 autoPlayButton.addEventListener('click',function(){
-  function changeImage(){
-    i += 1;
-    if (i >= 4){
-      i = 0;
-    }
+  setInterval(() => {
+  i -= 1;
+  if (i < 0){
+    i = 3;
+  }
   imageDisplay.innerHTML = `<img src=${images[i].url}></img>`
-  }
-  while(autoPlayButton.addEventListener('click',function(){})){
-    for (let i = 0; i > -1; i++){
-      changeImage();
-    }
-  }
+  }, 1000);
 })
