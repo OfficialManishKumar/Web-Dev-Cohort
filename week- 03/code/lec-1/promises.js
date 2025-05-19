@@ -30,7 +30,7 @@ data2.then((response) => {let responseData2 = response.json()       // ".json" c
             console.log("Title or Name of one of inside the given object is: ",objectData2.data.data[0].title)
     })
 })
-// We cannot make this "objectData2" object available globally because, it(if we try) will become an sychronous operation and this above fetching in asychonous, and when it(if we try) will go to Call stack, there will be no variable name "objectData2" beecause that might not fetched presently, so it will display error.
+// We cannot make this "objectData2" object available globally because, it(if we try) will become an sychronous operation and this above fetching is asychonous, and when it(if we try) will go to Call stack, there will be no variable name "objectData2" because that might not fetched presently, so it will display error.
 
 // DOM + fetch with another way to create object
 data3 = fetch('https://api.freeapi.app/api/v1/public/randomproducts?page=1&limit=10&inc=category%2Cprice%2Cthumbnail%2Cimages%2Ctitle%2Cid&query=mens-watches')
