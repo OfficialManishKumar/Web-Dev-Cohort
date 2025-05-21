@@ -41,12 +41,14 @@ fsPromises
 
 // Creating Read File promise
 function readFilePromise(file,encoding){
-    return new Promise (function(resolve,reject){      // "reject" = ".catch" and "resolve" = ".then"
+    return new Promise (function(resolve,reject){      // "reject" = will store the error and "resolve" = will store the content if error not found
         fs.readFile(file,encoding,function(error,content){
             if (error){
-                reject(error)
+                reject(error)    // will return the errro to "reject" if error is found
             }
-            else(resolve(content))
+            else{
+                resolve(content)    // will return the content on reading to resolve
+            }
         })
     })
 }
@@ -89,7 +91,6 @@ readFilePromise('./op.txt','utf-8',function(error,content){let contents = conten
 // And this, converting of Legacy callback code to support promises is called Promisification.
 // And the above one is Asynchronous(not requesting to wait) code but internally(line 83-87) are running synchronously because to run line 86, he had to wait for completing line 85.
 // Another way to do it is, we uses "await" keyword and we write these codes inside async functions, it's also runs sync internally, but looks good.
-const fs = require('fs')
 async function doTasks() {
     let reading = await readFilePromise('./op.txt','utf-8')
     await writeFilePromise('backedUp.txt',reading)

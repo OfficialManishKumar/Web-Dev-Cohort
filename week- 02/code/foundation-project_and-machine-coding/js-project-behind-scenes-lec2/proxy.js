@@ -55,7 +55,7 @@ function negativeIndexing(array){
                 target[target.length+index] = value;
             }
             else{target[index] = value}
-            return true;        // We write it to tell that it's done, and it is sone by-default in case of "get" attribute
+            return true;        // We write it to tell that it's done, and it is done by-default in case of "get" attribute
         }
     })
 }

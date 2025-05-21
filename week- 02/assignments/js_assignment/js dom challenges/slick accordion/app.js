@@ -2,10 +2,17 @@
  * Write your challenge solution here
  */
 
-let accordionitem = document.querySelector('.accordion-item')
+let accordion = document.querySelector('.accordion')
 
-accordionitem.addEventListener('click',function(){
-    accordionitem.appendChild(document.querySelector('.accordion-item > div#accordion-content'))
-})
+for (let i = 0; i < accordion.childElementCount; i++){
+    accordion.children[i].children[1].style['max-height'] = "0px";
+    accordion.children[i].children[0].addEventListener('click',function(){
+        if(accordion.children[i].children[1].style['max-height'] == "0px"){
+            accordion.children[i].children[1].style['max-height'] = "max-content";
+        }
+        else{
+            accordion.children[i].children[1].style['max-height'] = "0px";
+        }
+    })
 
-
+}
