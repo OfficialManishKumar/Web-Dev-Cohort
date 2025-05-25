@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<!-- Selecting Present Mood -->
+<h1>Mood Tracker</h1>
+<h2>Select Mood of the Day</h2>
+<div id="emotionBtns">
+  <button onclick="mood('😊',new Date().getDate())">😊 Happy</button>
+  <button onclick="mood('😫',new Date().getDate())">😫 Sad</button>
+  <button onclick="mood('😒',new Date().getDate())">😒 Neutral</button>
+  <button onclick="mood('😃',new Date().getDate())">😃 Excited</button>
+</div>
+
+<div id="calendar"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

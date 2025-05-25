@@ -1,0 +1,152 @@
+/*  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100vh;
+    width: 100vh;
+    background-color: black;
+    color: white;
+}
+
+/* body */
+#container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10vw;
+    background-color: black;
+}
+/* Task Box */
+.box{
+    min-height: 70vh;
+    width: 250px;
+    margin-left: 115px;
+    padding: 30px 20px 0 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 19px 38px, rgba(255, 255, 255, 0.22) 0px 15px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* For dragging state */
+.box.drag-over {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px dashed white;
+}
+/* Heading lines of box */
+.box>hr{width: 100%;}
+
+/* box of Tasks */
+.box>div{
+    height: 80%;
+    width: 100%;
+    padding: 15px;
+    position: relative;
+}
+
+/* Sort Items */
+.sortTasks{
+    height: 28px;
+    width: 40px;
+    border-radius: 10px;
+    position: absolute;
+    top: -4%;
+    left: 80%;
+}
+
+/* Add Task Button */
+#addTask{
+    border: none;
+    height: 10%;
+    width: 121%;
+    border-radius: 0 0 18px 18px;
+}
+
+#addTask:hover{
+    background-color: green;
+    color: white;
+}
+.tasks{
+    padding: 7px 10px ;
+    font-size: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.deleteTask{background-color: black;border: none; font-size: 20px;}
+.tasks:hover{
+    background-color: white;
+    color: black;
+
+}
+/* Task Flying state */
+.tasks.flying{
+    opacity: 0.5;
+    background: white;
+    color: transparent; /* Makes the text Invisible */
+}
+
+/* Task Creator */
+#taskCreatorBG{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    background-color: rgba(255, 255, 255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+#taskCreator{
+    height: 300px;
+    width: 250px;
+    background: linear-gradient(to right, rgb(40, 40, 201), rgb(214, 39, 39));
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+/* Input box */
+#taskCreator>input[type="text"]{
+    height: 35px;
+    width: 100%;
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+}
+/* color selector */
+.colorOptions{
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: 0.3s all linear;
+}
+.colorOptions:checked{
+    height: 40px;
+    width: 40px;
+    box-shadow: 0 0 0 5px rgb(0, 0, 0) inset;
+    border: 3px solid white;
+}
+/* Add Task Button */
+#taskCreator>button{
+    height: 40px;
+    width: 60%;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+}
+#taskCreator>button:hover{
+    background-color: rgb(54, 54, 54);
+    color: white
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="container">
+    <div class="box">
+        <!-- About -->
+        <h1>To Do Tasks</h1><hr>
+        <p>Tasks to do</p><hr><br>
+        <div id="toDoTasks">
+            <button class="sortTasks">Sort</button>
+        </div>
+        <button id="addTask">Add Task</button>
+    </div>
+    <div class="box">
+        <!-- About -->
+        <h1>Progress Tasks</h1><hr>
+        <p>Tasks in Progress</p><hr><br>
+        <div id="progressTasks">
+            <button class="sortTasks">Sort</button>
+        </div>
+    </div>
+    <div class="box">
+        <!-- About -->
+        <h1>Tasks Done</h1><hr>
+        <p>Tasks are Completed</p><hr><br>
+        <div id="completedTasks">
+            <button class="sortTasks">Sort</button>
+        </div>
+    </div>
+</div>
+
+<!-- Add Task -->
+<div id="taskCreatorBG">
+    <div id="taskCreator">
+        <input type="text" placeholder="Enter Task Name">
+        <div id="colorSelector">
+            <input type="radio" name="color" value="white" style="background-color: white;" class="colorOptions" checked="checked">
+            <input type="radio" name="color" value="red" style="background-color: red;" class="colorOptions">
+            <input type="radio" name="color" value="green" style="background-color: green;" class="colorOptions">
+            <input type="radio" name="color" value="blue" style="background-color: blue;" class="colorOptions">
+        </div>
+        <button id="addingTask">Add Task</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
