@@ -48,6 +48,8 @@ const registerUser = async(request,response)=>{
             message: "Email sent to the User",
             user
         })
+
+        // Login User if he is present in database
     } catch (error) {
         return response.status(400).json({
             success: false,
