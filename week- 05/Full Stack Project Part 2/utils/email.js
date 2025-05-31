@@ -2,7 +2,7 @@ import nodemailer from "nodemailer"
 
 const sendEmail = async (user,token)=>{
     const transporter = nodemailer.createTransport({
-        host: "sandbox.smtp.mailtrap.io",
+        host: process.env.MAILTRAP_HOST,
         port: process.env.MAILTRAP_PORT,
         secure: false, // true for 465, false for other ports
         auth: {
@@ -14,9 +14,8 @@ const sendEmail = async (user,token)=>{
     const info = await transporter.sendMail({
         from: process.env.MAILTRAP_SENDERMAIL,
         to: user.email,
-        subject: "Verify Your Email",
-        text: `Please Click on this Link to Verify: ${process.env.BASE_URL}/user/register/verify/${token}`,
-        html: `<p>Please Click on this Link to Verify: <a href="${process.env.BASE_URL}/user/verify/${token}">Verify Email</a></p>`,
+        subject: "From Manish Saw",
+        html: `<p>Please Click on this Link: <a href=${token}>Click Me</a></p>`,
     });
 
     return info;
