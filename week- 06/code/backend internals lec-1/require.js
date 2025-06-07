@@ -1,0 +1,6 @@
+// And now to import the add and subtract function from the "export.js" file, we just need to use require function to get the export functions and store the functions in a variable.
+const exported = require('./exports')        // don't need to use ".js" in last, because node js only works in js and he knows that file will be a js file
+console.log(exported(4,5))        // we can access this add function without even using any name, because we had exported that function by-default.
+// console.log(exported.subtract(5,4))      // remove default export to use subtract function from this way or just pass both the add and subtract function as oject by-default.
+
+// When we use require, then it takes an id, and it check if the id starts from "." then find the module in present directory and if it starts from ".." then find that file on parent directory and if the id doesn't starts from any "." then find that export in the node internal modules and if not found here also, then find that on "node_modules"
