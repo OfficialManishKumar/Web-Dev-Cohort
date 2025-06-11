@@ -7,7 +7,7 @@ app.use(cookieParser())
 
 // router Imports
 import healthCheck from "./routes/healthcheck.route.js"
-import {registerRouter,emailVerifierRouter,logInRouter,logOutRouter,resendVerificationRouter,forgetPasswordRouter} from "./routes/auth.route.js"
+import {registerRouter,emailVerifierRouter,logInRouter,logOutRouter,resendVerificationRouter,forgetPasswordRouter,resetPasswordRouter,forgetPasswordVerifierRouter,resetPasswordVerifierRouter,getCurrentUserRouter} from "./routes/auth.route.js"
 
 app.use("/api/v1/healthCheck",healthCheck)
 app.use("/user",registerRouter)
@@ -16,5 +16,9 @@ app.use("/user",resendVerificationRouter)
 app.use("/user",logInRouter)
 app.use("/user",logOutRouter)
 app.use("/user",forgetPasswordRouter)
+app.use("/user",resetPasswordRouter)
+app.use("/user",forgetPasswordVerifierRouter)
+app.use("/user",resetPasswordVerifierRouter)
+app.use("/api/v1",getCurrentUserRouter)
 
 export default app

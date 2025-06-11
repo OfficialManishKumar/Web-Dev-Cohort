@@ -57,7 +57,38 @@ const forgetPasswordValidator = ()=>{
 const resetPasswordValidator = ()=>{
     return [
         body("email")
+            .notEmpty().withMessage("Please Enter the Email first")
+            .isEmail().withMessage("Please enter a Valid email."),
+        body("password")
+            .notEmpty().withMessage("Please Enter the Password first"),
     ]
 }
 
-export {userLoginValidator,userRegistrationValidator,verifyUserValidator,userLogOutValidator,forgetPasswordValidator};
+const forgetPasswordVerifierValidator = ()=>{
+    return [
+        param("forgotPasswordToken")
+            .notEmpty().withMessage("Invalid Request"),
+        body("newPassword")
+            .notEmpty().withMessage("Please Enter a New password first")
+            .isStrongPassword({minUppercase:2,minLowercase:2,minSymbols:1}).withMessage("Password should have 2 Capital, 2 Small, 1 Number and 1 Special characters")
+    ]
+}
+
+const resetPasswordVerifierValidator = ()=>{
+    return[
+        cookie('resetPasswordToken')
+            .notEmpty().withMessage("Invalid Request"),
+        body("newPassword")
+            .notEmpty().withMessage("Please Enter a New password first")
+            .isStrongPassword({minUppercase:2,minLowercase:2,minSymbols:1}).withMessage("Password should have 2 Capital, 2 Small, 1 Number and 1 Special characters"),
+    ]
+}
+
+const getCurrentUserValidator = ()=>{
+    return[
+        cookie('token')
+            .notEmpty().withMessage("User not Found")
+    ]
+}
+
+export {userLoginValidator,userRegistrationValidator,verifyUserValidator,userLogOutValidator,forgetPasswordValidator,resetPasswordValidator,forgetPasswordVerifierValidator,resetPasswordVerifierValidator,getCurrentUserValidator};

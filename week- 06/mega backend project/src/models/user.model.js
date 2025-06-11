@@ -97,13 +97,22 @@ userSchema.methods.generateRefreshToken = async function(){
     )
 }
 
-userSchema.methods.generateResetPasswordToken = async function(){
+userSchema.methods.generateForgetPasswordToken = async function(){
     return jwt.sign(
         {
         id:this._id,
         },
-        process.env.REFRESH_TOKEN_SECRET,
-        {expiresIn:process.env.REFRESH_TOKEN_EXPIRY}
+        process.env.FORGET_PASSWORD_TOKEN_SECRET,
+        {expiresIn:process.env.FORGET_PASSWORD_TOKEN_EXPIRY}
+    )
+}
+userSchema.methods.generateResetPasswordCookie = async function(){
+    return jwt.sign(
+        {
+        id:this._id,
+        },
+        process.env.RESET_PASSWORD_TOKEN_SECRET,
+        {expiresIn:process.env.RESET_PASSWORD_TOKEN_EXPIRY}
     )
 }
 

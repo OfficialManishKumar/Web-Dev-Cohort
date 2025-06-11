@@ -136,11 +136,11 @@ export const emailVerificationEmail = (to,url)=>{
 }
 
 
-export const resetPasswordEmail = (to,url)=>{
+export const forgetPasswordEmail = (to,url)=>{
   sendEmail(
     "Officialmanishsaw@gmail.com",
     to,
-    "Change Password",
-    mail("Change your Password",`${url}`,"Reset password")
+    "Forgot User Password",
+    mail("Forget your Password",`${url}`,"Change your password")
   )
 }
