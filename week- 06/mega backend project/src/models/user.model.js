@@ -64,7 +64,7 @@ const userSchema = new mongoose.Schema({
 },{timestamps:true})
 
 // hashing Password
-userSchema.pre("save",async (next) => {
+userSchema.pre("save",async function(next) {
     if (this.isModified("password")){
         this.password = await bcrypt.hash(this.password,10);
         next()
@@ -88,6 +88,16 @@ userSchema.methods.generateAccessToken = async function(){
 }
 
 userSchema.methods.generateRefreshToken = async function(){
+    return jwt.sign(
+        {
+        id:this._id,
+        },
+        process.env.REFRESH_TOKEN_SECRET,
+        {expiresIn:process.env.REFRESH_TOKEN_EXPIRY}
+    )
+}
+
+userSchema.methods.generateResetPasswordToken = async function(){
     return jwt.sign(
         {
         id:this._id,

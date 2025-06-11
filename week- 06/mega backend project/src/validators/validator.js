@@ -1,4 +1,5 @@
-import {body} from "express-validator"
+import { request } from "express"
+import {body, cookie,param} from "express-validator"
 
 const userRegistrationValidator = ()=>{
     return[
@@ -7,7 +8,7 @@ const userRegistrationValidator = ()=>{
             .notEmpty().withMessage("Email is Required")
             .isEmail().withMessage("Email is Invaide"),
 
-        body("username")
+        body("userName")
             .trim()
             .notEmpty().withMessage("Username is required")
             .isLength({min:3}).withMessage("Username is too short")
@@ -15,7 +16,14 @@ const userRegistrationValidator = ()=>{
         body("password")
             .notEmpty().withMessage("Please Enter the password first")
             .isLength({min:8}).withMessage("Password should be more than 8 chars")
-            .isStrongPassword().withMessage("Please Enter a Strong Password"),
+            .isStrongPassword({minUppercase:2,minLowercase:2,minSymbols:1}).withMessage("Password should have 2 Capital, 2 Small, 1 Number and 1 Special characters")
+    ]
+}
+
+const verifyUserValidator = ()=>{
+    return[
+        param("emailVerificationToken")
+            .notEmpty().withMessage("Invalid Request")
     ]
 }
 
@@ -23,12 +31,33 @@ const userLoginValidator = ()=>{
     return[
         body("email")
             .trim()
-            .isEmail().withMessage("Email is not valid")
-            .notEmpty().withMessage("Please Enter the Email first"),
+            .notEmpty().withMessage("Please Enter the Email first")
+            .isEmail().withMessage("Email is not valid"),
         body("password")
             .trim()
             .notEmpty().withMessage("Please Enter the Password also.")
     ]
 }
 
-export {userLoginValidator,userRegistrationValidator};
+const userLogOutValidator = ()=>{
+    return[
+        cookie("token")
+            .notEmpty().withMessage("Invalid User.")
+    ]
+}
+
+const forgetPasswordValidator = ()=>{
+    return[
+        body("email")
+            .notEmpty().withMessage("Please Enter the Email First")
+            .isEmail().withMessage("Please Enter a valid Email")
+    ]
+}
+
+const resetPasswordValidator = ()=>{
+    return [
+        body("email")
+    ]
+}
+
+export {userLoginValidator,userRegistrationValidator,verifyUserValidator,userLogOutValidator,forgetPasswordValidator};

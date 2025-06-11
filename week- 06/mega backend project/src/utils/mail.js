@@ -88,7 +88,7 @@ const mail = function(head,url,buttonText){
         </p>
         <a href=${url} class="button">${buttonText}</a>
         <p>If the button doesn't work, copy and paste the link below into your browser:</p>
-        <div class="link-fallback">{{action_link}}</div>
+        <div class="link-fallback">${url}</div>
       </div>
       <div class="footer">
         &copy; 2025 Foundrly &mdash; All rights reserved<br>
@@ -125,6 +125,7 @@ const sendEmail = async (from,to,subject,html) => {
 };
 
 // Sending Email 
+
 export const emailVerificationEmail = (to,url)=>{
   sendEmail(
     "Officialmanishsaw@gmail.com",
@@ -134,14 +135,6 @@ export const emailVerificationEmail = (to,url)=>{
   )
 }
 
-export const logInEmail = (to,url)=>{
-  sendEmail(
-    "Officialmanishsaw@gmail.com",
-    to,
-    "Log In",
-    mail("Log in with your Email",`${url}`,"Log IN")
-  )
-}
 
 export const resetPasswordEmail = (to,url)=>{
   sendEmail(
