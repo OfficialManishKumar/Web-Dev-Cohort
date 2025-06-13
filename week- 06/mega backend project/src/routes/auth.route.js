@@ -1,7 +1,7 @@
 import { Router } from "express"
 import {registerUser,verifyUserEmail,logInUser,logOutUser,resendVerificationEmail,forgetPassword,resetPassword,forgetPasswordVerifier,resetPasswordVerifier,getCurrentUser} from "../controller/auth.controller.js"
 import {validate} from "../middleware/validator.middleware.js"
-import {userRegistrationValidator,verifyUserValidator,userLoginValidator,userLogOutValidator,forgetPasswordValidator,resetPasswordValidator,forgetPasswordVerifierValidator,resetPasswordVerifierValidator,getCurrentUserValidator} from "../validators/validator.js"
+import {userRegistrationValidator,verifyUserValidator,userLoginValidator,userLogOutValidator,forgetPasswordValidator,resetPasswordValidator,forgetPasswordVerifierValidator,resetPasswordVerifierValidator,getCurrentUserValidator} from "../validators/auth-validator.js"
 
 const registerRouter = Router()
 const emailVerifierRouter = Router()
