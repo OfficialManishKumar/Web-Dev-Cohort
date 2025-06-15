@@ -1,22 +1,23 @@
 import asyncHandler from "../utils/async-handler.js"
 const getNotes = asyncHandler(async (req, res) => {
-  console.log("Hello")
+  // Hello
 });
 
 const getNoteById = asyncHandler(async (req, res) => {
-  console.log("Hello")  
+  // Hello
 });
 
 const createNote = asyncHandler(async (req, res) => {
-  const {noteName, }
+  const {projectId} = req.param;
+  const {createdBy} = req.body
 });
 
 const updateNote = asyncHandler(async (req, res) => {
-  console.log("Hello")
+  // Hello
 });
 
 const deleteNote = asyncHandler(async (req, res) => {
-  console.log("Hello")
+  // Hello
 });
 
 
