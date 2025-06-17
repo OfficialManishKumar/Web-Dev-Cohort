@@ -18,6 +18,7 @@ export const registerUser = asyncHandler(async(req,res)=>{
             userName:userName,
             password:password,
             fullName:userName,
+            role:"user",
             emailVerificationToken:emailVerificationToken,
             emailVerificationExpiry:emailVerificationExpiry
         })
@@ -81,8 +82,8 @@ export const logInUser = asyncHandler(async(req,res)=>{
         if(!user.isEmailVerified){
             return res.status(400).json({message:"Please verify your Email first."})
         }
-        const accessToken = await user.generateAccessToken()
-        await res.cookie('token',accessToken,{
+        const refreshToken = await user.generateRefreshToken()
+        await res.cookie('token',refreshToken,{
             httpOnly:true,
             secure:true,
             maxAge: 24*60*60*1000

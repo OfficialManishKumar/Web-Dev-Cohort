@@ -4,10 +4,11 @@ import { User } from "../models/user.model.js";
 import { ApiError } from "../utils/api-error.js";
 import asyncHandler from "../utils/async-handler.js";
 import mongoose from "mongoose";
+import jwt from "jsonwebtoken"
 
 const getProjects = asyncHandler(async (req, res) => {
   const {userID} = req.body;
-  const projects = await Project.find(({createdBy:userID}))
+  const projects = await ProjectMember.find(({user:userID}))
   
   if(projects.length == 0){
     const user = await User.findById(userID)
@@ -32,11 +33,20 @@ const getProjectById = async (req, res) => {
 };
 
 const createProject = asyncHandler(async (req, res) => {
-  try{  const {name,description,createdBy} = req.body;
+  try{
+    const token = req.cookies.token;
+    const userId = jwt.verify(token,process.env.REFRESH_TOKEN_SECRET).id
+    const {name,description} = req.body;
     const project = await Project.create({
       name:name,
       description:description,
-      createdBy:createdBy})
+      createdBy:userId}
+    )
+    await ProjectMember.create({
+      user: userId,
+      project: project._id,
+      role: "project_admin"
+    })
     return res.status(400).json({message:"Project Created Successfuly"})
   } catch (error) {
     if (error.code === 11000) {
@@ -58,6 +68,9 @@ const updateProject = async (req, res) => {
   if(project === null){
     throw new ApiError(400,'Invalid Request')
   }
+  const token = req.cookies.token;
+  const userId = jwt.verify(token,process.env.REFRESH_TOKEN_SECRET)
+  if(ProjectMember.findOne({})){}
   const updatedProject = await Project.findByIdAndUpdate(projectId,{name:newName,description:newDescription})
   return res.status(200).json({message: "Project updated Successfuly."})
 };

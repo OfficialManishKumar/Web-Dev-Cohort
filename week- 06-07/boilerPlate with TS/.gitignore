@@ -1,0 +1,133 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# TypeScript
+*.tsbuildinfo
+
+# Build output
+dist/
+build/
+out/
+coverage/
+lib/
+tmp/
+temp/
+.cache/
+.next/
+.nuxt/
+.svelte-kit/
+.storybook/
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Test coverage
+coverage/
+.nyc_output/
+lcov-report/
+
+# Misc
+*.tgz
+*.gz
+*.zip
+*.7z
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+
+# IDEs
+.idea/
+*.iml
+
+# Optional: Ignore local test databases
+*.sqlite
+*.sqlite3
+*.db
+
+# Optional: Ignore local SSL keys
+*.pem
+*.key
+*.crt
+
+# Optional: Ignore Mac system files
+.AppleDouble
+.LSOverride
+
+# Optional: Ignore Windows system files
+$RECYCLE.BIN/
+
+# Optional: Ignore Linux system files
+*~
+
+# Optional: Ignore JetBrains IDEs
+*.ipr
+*.iws
+*.sublime-workspace
+*.sublime-project
+
+# Optional: Ignore npm logs
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+
+# Optional: Ignore parcel-bundler cache
+.cache/
+.parcel-cache/
+
+# Optional: Ignore SASS cache
+.sass-cache/
+
+# Optional: Ignore coverage reports
+coverage/
+*.lcov
+
+# Optional: Ignore storybook static build
+storybook-static/
+
+# Optional: Ignore Cypress
+cypress/videos/
+cypress/screenshots/
+
+# Optional: Ignore Playwright
+test-results/
+playwright-report/
+
+# Optional: Ignore local Redis files
+dump.rdb
+
+# Optional: Ignore local MongoDB files
+*.lock
+mongod.lock
+
+# Optional: Ignore Docker files
+docker-compose.override.yml
+
+# End

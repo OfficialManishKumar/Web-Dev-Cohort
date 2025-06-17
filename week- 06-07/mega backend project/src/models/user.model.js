@@ -2,6 +2,7 @@ import mongoose  from "mongoose";
 import bcrypt  from "bcryptjs";
 import jwt from "jsonwebtoken"
 import crypto from "crypto"
+import {userRolesEnum,AvailableUserRoles} from "../utils/constants.js"
 
 const userSchema = new mongoose.Schema({
     avatar:{
@@ -60,6 +61,11 @@ const userSchema = new mongoose.Schema({
     },
     refreshToken:{
         type:String,
+    },
+    role: {
+        type: String,
+        enum: AvailableUserRoles,
+        default: userRolesEnum.USER
     }
 },{timestamps:true})
 

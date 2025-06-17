@@ -17,4 +17,4 @@ const projectNoteSchema = new mongoose.Schema({
     }
 },{timestamps: true})       // "timestamps: true" will automatically add the "created_at" and "changed_at" field at mongodb by mongoose
 
-export const ProjectNote = mongoose.model("ProjectNote",noteSchema)
+export const ProjectNote = mongoose.model("ProjectNote",projectNoteSchema)
