@@ -3,17 +3,15 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "build":"tsc",
+    "dev": "nodemon dist/index.js"
   },
   "author": "Manish Kumar Saw",
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "description": "",
   "devDependencies": {
-    "@types/express": "^5.0.3",
-    "@types/node": "^24.0.3",
-    "nodemon": "^3.1.10",
-    "typescript": "^5.8.3"
+    "nodemon": "^3.1.10"
   },
   "dependencies": {
     "@prisma/client": "^6.10.1",
